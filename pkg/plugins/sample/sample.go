@@ -45,7 +45,11 @@ func (s *Sample) Name() string {
 }
 
 func (s *Sample) Filter(ctx context.Context, state *framework.CycleState, pod *v1.Pod, node *nodeinfo.NodeInfo) *framework.Status {
-	klog.V(3).Infof("filter pod: %v", pod.Name)
+	var nodeName string
+	if node.Node() != nil {
+		nodeName = node.Node().Name
+	}
+	klog.V(3).Infof("filter pod: %v, node: %v", pod.Name, nodeName)
 	return framework.NewStatus(framework.Success, "")
 }
 
@@ -54,6 +58,6 @@ func (s *Sample) PreBind(ctx context.Context, state *framework.CycleState, pod *
 	if err != nil {
 		return framework.NewStatus(framework.Error, err.Error())
 	}
-	klog.V(3).Infof("prebind node info: %+v", nodeInfo.Node())
+	klog.V(3).Infof("prebind pod %v, node info: %+v", pod.Name, nodeInfo.Node())
 	return framework.NewStatus(framework.Success, "")
 }

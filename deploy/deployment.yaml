@@ -48,12 +48,12 @@ spec:
           name: scheduler-config
       containers:
       - name: scheduler-ctrl
-        image: scheduler-framework-sample:f99aae8
-        imagePullPolicy: IfNotPresent
+        image: chendotjs/scheduler-framework-sample
+        imagePullPolicy: Always
         args:
         - scheduler-framework-sample
         - --config=/scheduler/scheduler-config.yaml
-        - --v=3
+        - --v=6
         resources:
           requests:
             cpu: "50m"

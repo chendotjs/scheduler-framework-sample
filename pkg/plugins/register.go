@@ -1,7 +1,7 @@
 package plugins
 
 import (
-	"github.com/angao/scheduler-framework-sample/pkg/plugins/sample"
+	"github.com/chendotjs/scheduler-framework-sample/pkg/plugins/sample"
 	"github.com/spf13/cobra"
 	"k8s.io/kubernetes/cmd/kube-scheduler/app"
 )

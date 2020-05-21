@@ -1,4 +1,4 @@
-# Copyright 2019 The Angao Authors.
+# Copyright 2019 The chendotjs Authors.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -31,7 +31,7 @@ build-linux: init
 	CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o=${BIN_DIR}/scheduler-framework-sample ./cmd/scheduler
 
 image: build-linux
-	docker build --no-cache . -t scheduler-framework-sample:$(TAG)
+	docker build --no-cache . -t chendotjs/scheduler-framework-sample
 
 update:
 	go mod download

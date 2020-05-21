@@ -6,7 +6,7 @@ import (
 	"os"
 	"time"
 
-	"github.com/angao/scheduler-framework-sample/pkg/plugins"
+	"github.com/chendotjs/scheduler-framework-sample/pkg/plugins"
 )
 
 func main() {
